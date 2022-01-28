@@ -18,7 +18,7 @@ public class HoverToken : MonoBehaviour
             go.SetActive(true);
             worldPosition = hitData.point;
             Vector3 newPosition = new Vector3(hitData.transform.position.x,
-                                                transform.position.y,
+                                                go.transform.position.y,
                                                 hitData.transform.position.z);
             go.transform.position = newPosition;
         }

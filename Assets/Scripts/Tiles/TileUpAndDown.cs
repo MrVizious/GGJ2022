@@ -16,7 +16,9 @@ public class TileUpAndDown : MonoBehaviour
     // Update is called once per frame
     void Update() {
         transform.position = new Vector3(transform.position.x,
-                initialY + GetYOffset(transform.position.x, transform.position.z) + offset,
+                initialY + GetYOffset(
+                    transform.position.x,
+                    transform.position.z),
                 transform.position.z);
     }
 

@@ -16,12 +16,14 @@ public class HoverToken : MonoBehaviour
         // TODO: Change to only use tiles
         if (Physics.Raycast(ray, out hitData, 1000))
         {
-            go.SetActive(true);
-            worldPosition = hitData.point;
-            Vector3 newPosition = new Vector3(hitData.transform.position.x,
-                                                go.transform.position.y,
-                                                hitData.transform.position.z);
-            go.transform.position = newPosition;
+            if(hitData.transform.tag == "Tile") {
+                go.SetActive(true);
+                worldPosition = hitData.point;
+                Vector3 newPosition = new Vector3(hitData.transform.position.x,
+                                                    go.transform.position.y,
+                                                    hitData.transform.position.z);
+                go.transform.position = newPosition;
+            }
         }
         else
         {

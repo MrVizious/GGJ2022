@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
 {
-    public Transform Token;
+    public Transform cameraPivot;
     public float duration = 3.0f;
 
     private Vector3 target, previousTarget;
@@ -30,7 +30,9 @@ public class CameraZoom : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hitData, 1000))
         {
-            worldPosition = hitData.point;
+            if(hitData.transform.tag == "Tile") {
+                worldPosition = hitData.point;
+            }
         }
 
         if (zoomed)
@@ -62,6 +64,7 @@ public class CameraZoom : MonoBehaviour
         if (previousTarget != target && !lookingAt)
         {
             StartCoroutine(lookAtLerp(previousTarget, target));
+            StartCoroutine(MovePivot(previousTarget, target));
             previousTarget = target;
         }
         Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, targetSize, elapsed / duration);
@@ -74,6 +77,17 @@ public class CameraZoom : MonoBehaviour
         while (elapsedTime < durationLerp)
         {
             Camera.main.transform.LookAt(Vector3.Lerp(prev, targ, elapsedTime / durationLerp));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        lookingAt = false;
+    }
+    IEnumerator MovePivot(Vector3 prev, Vector3 targ) {
+        float elapsedTime = 0f;
+        float durationLerp = 0.5f;
+        while (elapsedTime < durationLerp)
+        {
+            cameraPivot.transform.position = Vector3.Lerp(prev, targ, elapsedTime / durationLerp);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

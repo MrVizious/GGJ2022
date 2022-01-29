@@ -9,7 +9,6 @@ public class GenerateGrid : MonoBehaviour
     public int PerlinRange;
     public float PerlinScale;
     float[,] P;
-    GameObject[,] TilesGrid;
     void Start()
     {
         float GridOffset = (float)GridSize/2.0f;
@@ -23,18 +22,14 @@ public class GenerateGrid : MonoBehaviour
         }
     }
 
-    private void SpawnTile(GameObject tile_prefab, int pos_x, int pos_z, float grid_offset)
-    {
-        Vector3 pos = new Vector3 (pos_x - grid_offset,0,pos_z - grid_offset);
+    private void SpawnTile(GameObject tile_prefab, int pos_x, int pos_z, float grid_offset){
+        Vector3 pos = new Vector3 (pos_x - grid_offset,P[pos_x,pos_z],pos_z - grid_offset);
         UnityEngine.Quaternion rot = new UnityEngine.Quaternion(0f,0f,0f,0f);
         GameObject newTile = Instantiate(tile_prefab, pos, rot);
-        TilesGrid[pos_x,pos_z] = newTile;
-        newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(P[pos_x,pos_z],0f,0f));
-        //if(pos_x == GridSize -1 && pos_z == GridSize -1){newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f,0f,0f));}
+        //newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(P[pos_x,pos_z]*255,0f,0f));
     }
 
-    private float[,] GeneratePerlinGrid(int size)
-    {
+    private float[,] GeneratePerlinGrid(int size){
         int PerlinOffset = (int)Mathf.Floor(Random.Range(0f,(float)PerlinRange));
         P = new float[size,size];
         for(int i = 0; i < size; i++)

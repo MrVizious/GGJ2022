@@ -8,26 +8,14 @@ public class TileAnimationController : MonoBehaviour
     public float speed = 0.5f, offset = 0f;
     private float initialY;
 
-    private IEnumerator flipCoroutine = null;
-    private bool tile_reset = false;
-    private bool flip_allowed = true;
-
     private void Start() {
         initialY = transform.position.y;
-        flipCoroutine = DoTheRotate(1.0f,tile_reset);
-        StartCoroutine(flipCoroutine);
     }
 
 
     // Update is called once per frame
     void Update() {
         WobbleUpAndDown();
-        if(Input.GetKey(KeyCode.Space) && flip_allowed){
-            //Debug.Log("space pressed");
-            if (flipCoroutine != null) {StopCoroutine(flipCoroutine);}
-            flipCoroutine = DoTheRotate(1.0f,tile_reset);
-            StartCoroutine(flipCoroutine);
-            }
     }
 
     private void WobbleUpAndDown() {
@@ -43,20 +31,12 @@ public class TileAnimationController : MonoBehaviour
         return Mathf.Sin((x + y + Time.time) * speed) * amplitude;
     }
 
-    public IEnumerator DoTheRotate(float time, bool reset)
-     {
-        flip_allowed = false;
-        Quaternion qStart = transform.rotation;
-        if (reset) {transform.Rotate(0.0f, 90.0f, 180.0f);} else {transform.Rotate(0.0f, -90.0f, -180.0f);}
-        Quaternion qEnd = transform.rotation;
-        transform.rotation = qStart;
-        float t = 0.0f;
-        while (t <= 1.0f) {
-            transform.rotation = Quaternion.Slerp(qStart, qEnd, t);
-            t += Time.deltaTime / time;
+    public IEnumerator Rotate() {
+        Quaternion target = transform.rotation * Quaternion.AngleAxis(180, new Vector3(0.5f, 0f, -0.5f));
+        while (transform.rotation != target)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, Time.deltaTime * speed);
             yield return null;
         }
-        transform.rotation = qEnd;
-        flip_allowed = true;
-     }
+    }
 }

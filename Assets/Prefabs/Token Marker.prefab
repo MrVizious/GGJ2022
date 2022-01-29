@@ -7,22 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2338239954082101851, guid: 7b41132514ced063bae983283fefa792, type: 3}
-      propertyPath: m_Name
-      value: Token Marker
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114459547633197281, guid: 7b41132514ced063bae983283fefa792, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114459547633197281, guid: 7b41132514ced063bae983283fefa792, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4284019088014957454, guid: 7b41132514ced063bae983283fefa792, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3337a253416e29bb1adc305e270a9d24, type: 2}
     - target: {fileID: 8142654502143838880, guid: 7b41132514ced063bae983283fefa792, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

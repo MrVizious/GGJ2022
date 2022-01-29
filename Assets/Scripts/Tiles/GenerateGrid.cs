@@ -29,7 +29,7 @@ public class GenerateGrid : MonoBehaviour
         UnityEngine.Quaternion rot = new UnityEngine.Quaternion(0f,0f,0f,0f);
         GameObject newTile = Instantiate(tile_prefab, pos, rot);
         //TilesGrid[pos_x,pos_z] = newTile;
-        newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(P[pos_x,pos_z],0f,0f));
+        //newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(1-P[pos_x,pos_z],0f,0f));
         //if(pos_x == GridSize -1 && pos_z == GridSize -1){newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f,0f,0f));}
     }
 

@@ -18,7 +18,7 @@ public class TileAnimationController : MonoBehaviour
         WobbleUpAndDown();
     }
 
-    private void WobbleUpAndDown(){
+    private void WobbleUpAndDown() {
         transform.position = new Vector3(transform.position.x,
                 initialY + GetYOffset(
                     transform.position.x,
@@ -29,5 +29,14 @@ public class TileAnimationController : MonoBehaviour
     // Function that return a sine wave depending on the x and y position of the tile
     public float GetYOffset(float x, float y) {
         return Mathf.Sin((x + y + Time.time) * speed) * amplitude;
+    }
+
+    public IEnumerator Rotate() {
+        Quaternion target = transform.rotation * Quaternion.AngleAxis(180, new Vector3(0.5f, 0f, -0.5f));
+        while (transform.rotation != target)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, Time.deltaTime * speed);
+            yield return null;
+        }
     }
 }

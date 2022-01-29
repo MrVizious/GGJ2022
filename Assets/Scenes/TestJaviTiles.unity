@@ -1381,7 +1381,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1455,34 +1454,6 @@ Transform:
   m_Father: {fileID: 1183477643}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e839e4c12473014b9b3d3faccc0f61d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 0}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 963194225}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &994093110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,8 +1633,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1183477643}
-  - component: {fileID: 1183477645}
   - component: {fileID: 1183477644}
+  - component: {fileID: 1183477645}
   m_Layer: 0
   m_Name: Camera Pivot
   m_TagString: Untagged
@@ -1678,7 +1649,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183477642}
-  m_LocalRotation: {x: 0.27781588, y: 0.36497167, z: -0.1150751, w: 0.8811196}
+  m_LocalRotation: {x: 0.2693807, y: 0.42383242, z: -0.13363382, w: 0.85436654}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1686,7 +1657,7 @@ Transform:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 35, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 52.77, z: 0}
 --- !u!114 &1183477644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1699,13 +1670,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e839e4c12473014b9b3d3faccc0f61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
+  Event: {fileID: 11400000, guid: 4fb1f894280aaf60aa92fb0681524d21, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1183477645}
-        m_TargetAssemblyTypeName: CameraRotation, Assembly-CSharp
-        m_MethodName: ChangeLeftPosition
+        m_TargetAssemblyTypeName: CameraTurns, Assembly-CSharp
+        m_MethodName: ChangeTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1727,10 +1698,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306f9f5aa86da294aa2edcc4871a5020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minYRotation: 40
-  maxYRotation: 50
-  leftPosition: 1
-  rotationSpeed: 0.5
+  minYRotation: 35
+  maxYRotation: 55
+  leftTurn: 1
+  changeDuration: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.56364375
+      outSlope: 0.56364375
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.21086821
+      value: 0.11885455
+      inSlope: 1.2527622
+      outSlope: 1.2527622
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3745598
+      value: 0.43672407
+      inSlope: 1.4952554
+      outSlope: 1.4952554
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5242156
+      value: 0.5936576
+      inSlope: 0.045936048
+      outSlope: 0.045936048
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6959372
+      value: 0.42936158
+      inSlope: -1.3088393
+      outSlope: -1.3088393
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.87679887
+      value: 0.1289647
+      inSlope: -1.2405002
+      outSlope: -1.2405002
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0340576
+      value: 0
+      inSlope: -0.8200797
+      outSlope: -0.8200797
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  leftColor: {r: 0.63529414, g: 0.4862745, b: 0.35686275, a: 0}
+  rightColor: {r: 0.4528302, g: 0.39088646, b: 0.39088646, a: 0}
+  pivot: {fileID: 1183477643}
+  cam: {fileID: 963194227}
 --- !u!1 &1347503959
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileUpAndDown : MonoBehaviour
+public class TileAnimationController : MonoBehaviour
 {
     public float amplitude = 0.15f;
     public float speed = 0.5f, offset = 0f;
@@ -15,6 +15,10 @@ public class TileUpAndDown : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        WobbleUpAndDown();
+    }
+
+    private void WobbleUpAndDown(){
         transform.position = new Vector3(transform.position.x,
                 initialY + GetYOffset(
                     transform.position.x,

@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9175087db45a8418887dceedef5898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Token: {fileID: 0}
+  cameraPivot: {fileID: 3681715500602779128}
   duration: 3
   minSize: 1.5
   maxSize: 5

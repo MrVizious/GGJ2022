@@ -166,12 +166,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0.0017710328}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1593716505706631277}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1593716505706631277}
+  m_maskType: 0
 --- !u!1 &2338239954082101851
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2338239954082101851}
-  m_Mesh: {fileID: -8189560428114883783, guid: 60d74061fd4388e1ba8ac57a2bad401e, type: 3}
+  m_Mesh: {fileID: -2232952877369940510, guid: fa67af7afa67a0f4482b5084c4a9e984, type: 3}
 --- !u!23 &4284019088014957454
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2678891250128481361, guid: 60d74061fd4388e1ba8ac57a2bad401e, type: 3}
+  - {fileID: 2100000, guid: 691df8ca43e5be9458a771ca266bee94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -454,9 +454,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0.0017710328}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 2374478863095445561}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 2374478863095445561}
+  m_maskType: 0

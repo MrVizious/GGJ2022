@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TileLogicController : MonoBehaviour
 {
-    
+    public bool isLeft = false;
 }

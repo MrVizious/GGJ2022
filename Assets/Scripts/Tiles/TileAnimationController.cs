@@ -1,33 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class TileAnimationController : MonoBehaviour
 {
     public float amplitude = 0.15f;
-    public float speed = 0.5f, offset = 0f;
+    public float wobblingSpeed = 0.5f, wobblingOffset = 0f;
     private float initialY;
+    private Quaternion initialRotation;
+    public float rotationSpeed = 0.5f;
 
     private IEnumerator flipCoroutine = null;
     private bool tile_reset = false;
-    private bool flip_allowed = true;
 
     private void Start() {
         initialY = transform.position.y;
-        flipCoroutine = DoTheRotate(1.0f,tile_reset);
-        StartCoroutine(flipCoroutine);
     }
 
 
     // Update is called once per frame
     void Update() {
         WobbleUpAndDown();
-        if(Input.GetKey(KeyCode.Space) && flip_allowed){
-            //Debug.Log("space pressed");
-            if (flipCoroutine != null) {StopCoroutine(flipCoroutine);}
-            flipCoroutine = DoTheRotate(1.0f,tile_reset);
-            StartCoroutine(flipCoroutine);
-            }
+    }
+
+    public void Rotate() {
+        if (flipCoroutine != null) { StopCoroutine(flipCoroutine); }
+        flipCoroutine = DoTheRotate(tile_reset);
+        StartCoroutine(flipCoroutine);
+        
+        tile_reset = !tile_reset;
     }
 
     private void WobbleUpAndDown() {
@@ -40,23 +44,41 @@ public class TileAnimationController : MonoBehaviour
 
     // Function that return a sine wave depending on the x and y position of the tile
     public float GetYOffset(float x, float y) {
-        return Mathf.Sin((x + y + Time.time) * speed) * amplitude;
+        return Mathf.Sin((x + y + Time.time) * wobblingSpeed) * amplitude;
     }
 
-    public IEnumerator DoTheRotate(float time, bool reset)
-     {
-        flip_allowed = false;
-        Quaternion qStart = transform.rotation;
-        if (reset) {transform.Rotate(0.0f, 90.0f, 180.0f);} else {transform.Rotate(0.0f, -90.0f, -180.0f);}
-        Quaternion qEnd = transform.rotation;
-        transform.rotation = qStart;
-        float t = 0.0f;
-        while (t <= 1.0f) {
-            transform.rotation = Quaternion.Slerp(qStart, qEnd, t);
-            t += Time.deltaTime / time;
+    public IEnumerator DoTheRotate(bool reset) {
+        Quaternion qEnd;
+        if (reset) { qEnd = Quaternion.identity; }
+        else
+        {
+            qEnd = Quaternion.AngleAxis(180f, -Vector3.Normalize(Vector3.right + -Vector3.forward));
+        }
+        float quaternionDelta = Mathf.Infinity;
+        while (quaternionDelta > 0.01f)
+        {
+            Vector3 axisToRotateAround = Vector3.Normalize(Vector3.right + -Vector3.forward);
+            if(!reset) axisToRotateAround = -axisToRotateAround;
+
+            transform.RotateAround(transform.position, axisToRotateAround, rotationSpeed);
+            quaternionDelta = Quaternion.Angle(qEnd, transform.rotation);
             yield return null;
         }
         transform.rotation = qEnd;
-        flip_allowed = true;
-     }
+    }
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(TileAnimationController))]
+public class TileAnimationControllerEditor : Editor
+{
+    public override void OnInspectorGUI() {
+        DrawDefaultInspector();
+        TileAnimationController myScript = (TileAnimationController)target;
+        if (GUILayout.Button("Rotate"))
+        {
+            myScript.Rotate();
+        }
+    }
+}
+#endif

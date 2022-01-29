@@ -285,8 +285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amplitude: 0.1
-  speed: 0.6
-  offset: 0
+  wobblingSpeed: 0.5
+  wobblingOffset: 0
+  rotationSpeed: 5
 --- !u!1 &3105421109747301278
 GameObject:
   m_ObjectHideFlags: 0

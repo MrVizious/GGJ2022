@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
     // Start is called before the first frame update
     public int leftScore;
     public int rightScore;
+    public  TextMeshProUGUI leftTextScore;
+    public TextMeshProUGUI  rightTextScore;
     void Start()
     {
         leftScore = 0;
         rightScore = 0;
+        leftTextScore.text = "" + leftScore;
+        rightTextScore.text = "" + rightScore;
     }
 
     // Update is called once per frame

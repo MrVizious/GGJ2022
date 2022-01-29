@@ -23,10 +23,11 @@ public class GenerateGrid : MonoBehaviour
     }
 
     private void SpawnTile(GameObject tile_prefab, int pos_x, int pos_z, float grid_offset){
-        Vector3 pos = new Vector3 (pos_x - grid_offset,P[pos_x,pos_z],pos_z - grid_offset);
+        Vector3 pos = new Vector3 (pos_x - grid_offset,0,pos_z - grid_offset);
         UnityEngine.Quaternion rot = new UnityEngine.Quaternion(0f,0f,0f,0f);
         GameObject newTile = Instantiate(tile_prefab, pos, rot);
-        //newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(P[pos_x,pos_z]*255,0f,0f));
+        newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(P[pos_x,pos_z],0f,0f));
+        //if(pos_x == GridSize -1 && pos_z == GridSize -1){newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f,0f,0f));}
     }
 
     private float[,] GeneratePerlinGrid(int size){

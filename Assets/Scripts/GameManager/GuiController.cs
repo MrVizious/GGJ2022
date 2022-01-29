@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using RoboRyanTron.Unite2017.Events;
 using TMPro;
+using UnityEngine;
 
 public class GuiController : MonoBehaviour
 {
-
-    public  TextMeshProUGUI leftTextScore;
-    public TextMeshProUGUI  rightTextScore;
+    public GameData data;
+    public TextMeshProUGUI leftTextScore;
+    public TextMeshProUGUI rightTextScore;
     // Start is called before the first frame update
-    void Start()
-    {
+    private void Start() {
         leftTextScore.text = "" + 0;
         rightTextScore.text = "" + 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void UpdateGUI(){
+        leftTextScore.text = "" + data.leftScore;
+        rightTextScore.text = "" + data.rightScore;
     }
 }

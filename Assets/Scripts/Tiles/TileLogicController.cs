@@ -9,21 +9,25 @@ using UnityEditor;
 public class TileLogicController : MonoBehaviour
 {
     public bool isLeft = false;
-    public float value = 1f;
+    public int value = 1;
     public List<TextMeshPro> numberTexts;
 
+    private void Start() {
+        SetValue(1);
+    }
 
-    public void MultiplyValueBy(float factor) {
+    public void MultiplyValueBy(int factor) {
         SetValue(value * factor);
     }
 
-    public void SetValue(float value) {
+    public void SetValue(int value) {
         this.value = value;
         UpdateValueTexts();
     }
 
     public void UpdateValueTexts() {
-        foreach (TextMeshPro text in numberTexts) {
+        foreach (TextMeshPro text in numberTexts)
+        {
             text.text = value.ToString();
         }
     }
@@ -34,8 +38,7 @@ public class TileLogicController : MonoBehaviour
 [CustomEditor(typeof(TileLogicController))]
 public class TileLogicControllerEditor : Editor
 {
-    public override void OnInspectorGUI()
-    {
+    public override void OnInspectorGUI() {
         base.OnInspectorGUI();
 
         TileLogicController tileLogicController = (TileLogicController)target;
@@ -46,7 +49,7 @@ public class TileLogicControllerEditor : Editor
         }
         if (GUILayout.Button("Multiply by 2"))
         {
-            tileLogicController.MultiplyValueBy(2f);
+            tileLogicController.MultiplyValueBy(2);
         }
     }
 }

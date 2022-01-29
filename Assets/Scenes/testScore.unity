@@ -877,6 +877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 583206537}
   - component: {fileID: 583206538}
+  - component: {fileID: 583206539}
   m_Layer: 5
   m_Name: GUI_Controller
   m_TagString: Untagged
@@ -916,8 +917,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f073c3f94b03ebc47863131336804ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1faf025567f45aa64ac6f8637ff7fc78, type: 2}
   leftTextScore: {fileID: 1289754278}
   rightTextScore: {fileID: 789208427}
+--- !u!114 &583206539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583206536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e839e4c12473014b9b3d3faccc0f61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 78b759e18699fd04ea84d123f648a7bf, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 583206538}
+        m_TargetAssemblyTypeName: GuiController, Assembly-CSharp
+        m_MethodName: UpdateGUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &632298814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2245,6 +2275,51 @@ MonoBehaviour:
   amplitude: 0.1
   speed: 0.6
   offset: 0
+--- !u!1 &1377381951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1377381953}
+  - component: {fileID: 1377381952}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1377381952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377381951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a2eb1a15c8f8c418d161c622016786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1faf025567f45aa64ac6f8637ff7fc78, type: 2}
+--- !u!4 &1377381953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377381951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.92927814, y: -3.442267, z: 0.7632227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1398978480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8142654502143838882, guid: 7b41132514ced063bae983283fefa792, type: 3}
@@ -3694,12 +3769,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: -0.75413346, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1898719287}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &1898719287
 MeshRenderer:
   m_ObjectHideFlags: 0

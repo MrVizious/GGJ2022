@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileAnimationManager : MonoBehaviour
+public class TileAnimationController : MonoBehaviour
 {
     public float amplitude = 0.15f;
     public float speed = 0.5f, offset = 0f;

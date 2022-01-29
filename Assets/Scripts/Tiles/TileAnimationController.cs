@@ -10,7 +10,7 @@ public class TileAnimationController : MonoBehaviour
 
     private IEnumerator flipCoroutine = null;
     private bool tile_reset = false;
-    private bool flip_allowed = true;
+    private bool flip_allowed = false;
 
     private void Start() {
         initialY = transform.position.y;
@@ -22,7 +22,7 @@ public class TileAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         WobbleUpAndDown();
-        if(Input.GetKey(KeyCode.Space) && flip_allowed){
+        if(Input.GetKey(KeyCode.Space) || flip_allowed){
             //Debug.Log("space pressed");
             if (flipCoroutine != null) {StopCoroutine(flipCoroutine);}
             flipCoroutine = DoTheRotate(1.0f,tile_reset);
@@ -57,6 +57,6 @@ public class TileAnimationController : MonoBehaviour
             yield return null;
         }
         transform.rotation = qEnd;
-        flip_allowed = true;
+        flip_allowed = false;
      }
 }

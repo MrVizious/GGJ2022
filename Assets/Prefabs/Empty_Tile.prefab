@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae753b5664042ba5b101f4d3dbe7fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 0
 --- !u!1 &3105421109747301278
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,9 +397,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0.0017710328}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 2374478863095445561}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 2374478863095445561}
+  m_maskType: 0

@@ -19,11 +19,8 @@ public class EmptyTileLogicController : MonoBehaviour
     }
 
     private void OnDestroy() {
-        Debug.Log("llegado");
         GameController controller = GameObject.Find("GameController").GetComponent<GameController>();
-        Debug.Log("arribado");
         controller.EmptyTileDestroyed(transform, isLeftTurn);
-        Debug.Log("finalizado");
     }
 }
 

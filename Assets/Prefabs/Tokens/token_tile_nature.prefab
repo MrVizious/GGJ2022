@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 113094474375925687}
   - component: {fileID: 113094474375925680}
   m_Layer: 0
-  m_Name: token_tile
+  m_Name: token_tile_nature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,7 @@ public class Tiles3DSpawner : MonoBehaviour
             Destroy(model);
         }
         
-        Pool3DModels pool = isLeft ? poolTech : poolNature;
+        Pool3DModels pool = isLeft ? poolNature : poolTech;
         model = Instantiate(pool.GetRandomModel(), transform.position, transform.rotation, transform);
         model.AddComponent<AppearingAnimation>();
         if(!isLeft){

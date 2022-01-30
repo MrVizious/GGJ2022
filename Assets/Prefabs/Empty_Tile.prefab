@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8131577619364417022}
   - component: {fileID: 7503472088268128967}
   - component: {fileID: 3112440918522445406}
+  - component: {fileID: -5952210638961085398}
   m_Layer: 0
   m_Name: Empty_Tile
   m_TagString: Tile
@@ -153,6 +154,69 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   rotationSpeed: 12
+--- !u!114 &-5952210638961085398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338239954082101851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585ee77bbef584fa9ad12e564ea508d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.50354767
+      value: 1.0416973
+      inSlope: 1.6745095
+      outSlope: 1.6745095
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.82626355
+      value: 1.0306995
+      inSlope: -0.6606432
+      outSlope: -0.6606432
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328232
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.93719375
+      value: 0.98222315
+      inSlope: -0.36507338
+      outSlope: -0.36507338
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5106985
+      outWeight: 0.43135804
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3105421109747301278
 GameObject:
   m_ObjectHideFlags: 0

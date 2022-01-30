@@ -29,15 +29,33 @@ public class GameController : MonoBehaviour
         data.ChangeTurn();
     }
 
-    public bool GetIsLeftTurn(){
+    public bool GetIsLeftTurn() {
         return data.isLeftTurn;
     }
-    public void CalculateScores(){
-
+    public void CalculateScores() {
+        ResetScores();
+        foreach (GameObject tile in tiles)
+        {
+            TileLogicController controller = tile.GetComponent<TileLogicController>();
+            if (controller != null)
+            {
+                if (controller.isLeft)
+                {
+                    AddValueToLeftScore(controller.value);
+                }
+                else
+                {
+                    AddValueToRightScore(controller.value);
+                }
+            }
+        }
     }
 
     public void EmptyTileDestroyed(Transform t) {
         Quaternion rotation = GetIsLeftTurn() ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, -90, 180);
-        tiles.Add(Instantiate(tilePrefab, t.position, Quaternion.identity));
+        GameObject newTile = Instantiate(tilePrefab, new Vector3(t.position.x, 0f, t.position.z), Quaternion.identity);
+        newTile.GetComponent<TileLogicController>().isLeft = GetIsLeftTurn();
+        newTile.GetComponent<Tiles3DSpawner>().SpawnModel();
+        tiles.Add(newTile);
     }
 }

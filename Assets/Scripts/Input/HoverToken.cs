@@ -13,7 +13,6 @@ public class HoverToken : MonoBehaviour
     void Update() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        // TODO: Change to only use tiles
         if (Physics.Raycast(ray, out hitData, 1000))
         {
             if(hitData.transform.tag == "Tile") {
@@ -27,7 +26,7 @@ public class HoverToken : MonoBehaviour
         }
         else
         {
-            //go.SetActive(false);
+            go.SetActive(false);
         }
 
 

@@ -8,6 +8,11 @@ public class SoundController : MonoBehaviour
     public GameObject TechOST;
     public GameData data;
 
+    void Start()
+    {
+        changeSound();
+    }
+
     public void changeSound(){
         if(data.isLeftTurn){
             NatureOST.GetComponent<AudioSource>().volume = 1;

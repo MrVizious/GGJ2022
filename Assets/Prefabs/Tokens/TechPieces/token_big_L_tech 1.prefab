@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6479307913252435720}
   - component: {fileID: -6980497006551088650}
+  - component: {fileID: -2886084404246796558}
   m_Layer: 0
   m_Name: token_big_L_tech 1
   m_TagString: Untagged
@@ -51,6 +52,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 1faf025567f45aa64ac6f8637ff7fc78, type: 2}
   mainToken: {fileID: 8557326068460271941}
+--- !u!114 &-2886084404246796558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3998454362320820796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdd09c73d2c1914b82fec3b687ed3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &942436273945516516
 PrefabInstance:
   m_ObjectHideFlags: 0

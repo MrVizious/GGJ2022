@@ -9,10 +9,11 @@ public class GenerateGrid : MonoBehaviour
     public GameObject TilePrefab;
     public int PerlinRange;
     public float PerlinScale;
-    float[,] P;
     GameObject[,] TilesGrid;
+    float[,] P;
     void Start()
     {
+        TilesGrid = new GameObject[GridSize,GridSize];
         float GridOffset = (float)GridSize/2.0f;
         GeneratePerlinGrid(GridSize);
         for(int i = 0; i < GridSize; i++)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 113094474375925687}
   - component: {fileID: 113094474375925680}
   m_Layer: 0
-  m_Name: token_tile
+  m_Name: token_tile_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3337a253416e29bb1adc305e270a9d24, type: 2}
+  - {fileID: 2100000, guid: 89a125bf3291809489a5cad5efc374d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

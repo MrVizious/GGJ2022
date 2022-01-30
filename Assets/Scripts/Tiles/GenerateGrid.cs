@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GenerateGrid : MonoBehaviour
 {
@@ -28,8 +29,9 @@ public class GenerateGrid : MonoBehaviour
         Vector3 pos = new Vector3 (pos_x - grid_offset,0,pos_z - grid_offset);
         UnityEngine.Quaternion rot = new UnityEngine.Quaternion(0f,0f,0f,0f);
         GameObject newTile = Instantiate(tile_prefab, pos, rot);
+        newTile.GetComponentInChildren<TextMeshPro>().text = Mathf.Ceil(P[pos_x,pos_z]*10).ToString();
         //TilesGrid[pos_x,pos_z] = newTile;
-        //newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(1-P[pos_x,pos_z],0f,0f));
+        newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(1-P[pos_x,pos_z],0f,0f));
         //if(pos_x == GridSize -1 && pos_z == GridSize -1){newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f,0f,0f));}
     }
 

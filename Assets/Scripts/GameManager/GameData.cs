@@ -18,10 +18,11 @@ public class GameData : ScriptableObject
     public GameEvent onTurnChangedEvent;
 
     // Reset the game data at the start of a new game
-    private void Awake() {
+    private void OnEnable() {
         SetIsLeftTurn(true);
         SetLeftScore(0);
         SetRightScore(0);
+        Debug.Log("Awake");
     }
     
 
@@ -41,13 +42,11 @@ public class GameData : ScriptableObject
     public void SetLeftScore(int newScore) {
         leftScore = newScore;
         onScoreChangedEvent?.Raise();
-        Debug.Log("Left: " + leftScore);
     }
 
     public void SetRightScore(int newScore) {
         rightScore = newScore;
         onScoreChangedEvent?.Raise();
-        Debug.Log("Right: " + rightScore);
     }
 
     public void ChangeTurn() {

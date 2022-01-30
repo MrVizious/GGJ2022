@@ -40,7 +40,7 @@ public class GenerateGrid : MonoBehaviour
     }
 
     private float[,] GeneratePerlinGrid(int size) {
-        int PerlinOffset = (int)Mathf.Floor(Random.Range(0f, (float)PerlinRange));
+        int PerlinOffset = (int)Mathf.Ceil(Random.Range(0f, (float)PerlinRange));
         P = new float[size, size];
         for (int i = 0; i < size; i++)
         {

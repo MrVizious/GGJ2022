@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491d9f50a1f80ae2681ff5687b276fd4, type: 3}
+  m_Name: Nature3DModelsPool
+  m_EditorClassIdentifier: 
+  models:
+  - {fileID: 5650793296857669463, guid: 0bf4a572fa95c93cfbecd4f9f18c1c27, type: 3}
+  - {fileID: 789284843266499212, guid: 97b49bacb7eb20b59b13a1286cc9288a, type: 3}
+  - {fileID: 658677571176745659, guid: a0a6377dcf98a7ce99ce36e131eed95b, type: 3}
+  - {fileID: 8170564183709383593, guid: c257b12e98f663c67a25b2da78fdb61a, type: 3}
+  - {fileID: 3670333146886373823, guid: 78b5ebe63bbd20f1687b3dc61d8e43c5, type: 3}
+  - {fileID: 3038768165401603809, guid: 827dd44da93364b38a09c5d506a31a78, type: 3}
+  - {fileID: 6445449800070625166, guid: 17f3344551da74e72bcc2525b2190ddc, type: 3}

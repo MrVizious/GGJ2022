@@ -358,8 +358,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLeft: 0
-  value: 1
-  numberTexts: []
+  value: 0
+  numberTexts:
+  - {fileID: 5365855276071184564}
+  - {fileID: 7306110318663690235}
 --- !u!114 &6409118029003154130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,9 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a076186db19fb1447adad55bba69cce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logic: {fileID: 0}
   poolTech: {fileID: 11400000, guid: 0e86975174f3df0c5a605e0ac96b7abd, type: 2}
-  poolNature: {fileID: 11400000, guid: 0e86975174f3df0c5a605e0ac96b7abd, type: 2}
+  poolNature: {fileID: 11400000, guid: 2ac7192a117127baf9e85025e85f7d80, type: 2}
 --- !u!1 &3105421109747301278
 GameObject:
   m_ObjectHideFlags: 0

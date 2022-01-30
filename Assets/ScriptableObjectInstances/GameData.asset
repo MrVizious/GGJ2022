@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce966a1213b1d7a49bfe69cbb59efd19, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  leftScore: 0
-  rightScore: 0
+  leftScore: 35
+  rightScore: 16
   isLeftTurn: 0
   onScoreChangedEvent: {fileID: 11400000, guid: 78b759e18699fd04ea84d123f648a7bf, type: 2}
   onTurnChangedEvent: {fileID: 11400000, guid: 4fb1f894280aaf60aa92fb0681524d21, type: 2}

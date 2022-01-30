@@ -32,6 +32,9 @@ public class SceneManagement : MonoBehaviour {
     public void LoadNatureWins(){
         SceneManager.LoadScene("NatureWins");
     }
+    public void LoadHowTo(){
+        SceneManager.LoadScene("HowTo");
+    }
     public void LoadTechWins(){
         SceneManager.LoadScene("TechWins");
     }

@@ -13,7 +13,17 @@ public class GameData : ScriptableObject
 {
     public int leftScore = 0;
     public int rightScore = 0;
+    public bool isLeftTurn = true;
     public GameEvent onScoreChangedEvent;
+    public GameEvent onTurnChangedEvent;
+
+    // Reset the game data at the start of a new game
+    private void Awake() {
+        SetIsLeftTurn(true);
+        SetLeftScore(0);
+        SetRightScore(0);
+    }
+    
 
     public void AddValueToLeftScore(int newScore) {
         SetLeftScore(leftScore + newScore);
@@ -38,6 +48,14 @@ public class GameData : ScriptableObject
         onScoreChangedEvent?.Raise();
     }
 
+    public void ChangeTurn() {
+        SetIsLeftTurn(!isLeftTurn);
+    }
+
+    public void SetIsLeftTurn(bool newValue) {
+        isLeftTurn = newValue;
+        onTurnChangedEvent?.Raise();
+    }
 }
 
 #if UNITY_EDITOR

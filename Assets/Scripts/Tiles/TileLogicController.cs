@@ -41,8 +41,6 @@ public class TileLogicController : MonoBehaviour
     }
 }
 
-
-
 // Custom inspector with a button to multiply the value by 2
 #if UNITY_EDITOR
 [CustomEditor(typeof(TileLogicController))]

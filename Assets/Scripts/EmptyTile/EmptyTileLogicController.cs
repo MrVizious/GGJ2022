@@ -9,6 +9,6 @@ public class EmptyTileLogicController : MonoBehaviour
     }
 
     private void OnDestroy() {
-        //GameObject.Find("GameController").GetComponent<GameController>().EmptyTileDestroyed();
+        GameObject.Find("GameController").GetComponent<GameController>().EmptyTileDestroyed(transform);
     }
 }

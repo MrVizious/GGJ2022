@@ -30,7 +30,8 @@ public class CameraZoom : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hitData, 1000))
         {
-            if(hitData.transform.tag == "Tile") {
+            if(hitData.transform.tag == "Tile"
+                || hitData.transform.tag == "EmptyTile") {
                 worldPosition = hitData.point;
             }
         }

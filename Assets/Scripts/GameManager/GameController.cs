@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     public GameObject tilePrefab;
     private List<GameObject> tiles = new List<GameObject>();
 
+    private void Start() {
+        data.SetIsLeftTurn(true);
+    }
     private void Update() {
         CalculateScores();
         IsGameOver();
@@ -16,6 +19,14 @@ public class GameController : MonoBehaviour
     private bool IsGameOver(){
         if(tiles.Count == 49){
             Debug.Log("Game ended!");
+            if(data.leftScore > data.rightScore){
+                Debug.Log("Nature wins!");
+                SceneManagement.Instance.LoadNatureWins();
+
+            } else if(data.leftScore < data.rightScore){
+                Debug.Log("Tech wins!");
+                SceneManagement.Instance.LoadTechWins();
+            }
             return true;
         }
         return false;

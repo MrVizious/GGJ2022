@@ -8,6 +8,7 @@ public class TokenLogicManager : MonoBehaviour
 {
     private GameObject HitObject;
     private RaycastHit hit;
+    public GameData data;
 
     // Update is called once per frame
     void Update()
@@ -16,9 +17,14 @@ public class TokenLogicManager : MonoBehaviour
         UnityEngine.Debug.DrawRay(transform.position,Vector3.up,Color.blue);
         if (Physics.Raycast(new Ray(transform.position-Vector3.up*5,Vector3.up), out hit, 10.0f))
         {
-            UnityEngine.Debug.Log("Hit something");
-            HitObject = hit.transform.gameObject;
-            UnityEngine.Debug.Log(HitObject.GetComponentInChildren<TextMeshPro>().text);
+            if(Input.GetMouseButtonDown(0)){
+                //UnityEngine.Debug.Log("Hit something");
+                HitObject = hit.transform.gameObject;
+                //UnityEngine.Debug.Log(HitObject);
+                //UnityEngine.Debug.Log(HitObject.GetComponent<EmptyTileLogicController>());
+                HitObject.GetComponent<EmptyTileLogicController>().Disappear(data.isLeftTurn);
+                //UnityEngine.Debug.Log(HitObject.GetComponentInChildren<TextMeshPro>().text);
+            }
         }
     }
 }

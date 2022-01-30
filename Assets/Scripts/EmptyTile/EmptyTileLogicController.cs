@@ -9,6 +9,7 @@ public class EmptyTileLogicController : MonoBehaviour
 {
     private bool isLeftTurn;
     public int value;
+
     public void Disappear() {
         Disappear(GameObject.Find("GameController").GetComponent<GameController>().GetIsLeftTurn());
     }
@@ -18,7 +19,11 @@ public class EmptyTileLogicController : MonoBehaviour
     }
 
     private void OnDestroy() {
-        GameObject.Find("GameController").GetComponent<GameController>().EmptyTileDestroyed(transform, isLeftTurn);
+        Debug.Log("llegado");
+        GameController controller = GameObject.Find("GameController").GetComponent<GameController>();
+        Debug.Log("arribado");
+        controller.EmptyTileDestroyed(transform, isLeftTurn);
+        Debug.Log("finalizado");
     }
 }
 

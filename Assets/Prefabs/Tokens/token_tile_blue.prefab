@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 113094474375925686}
   - component: {fileID: 113094474375925687}
   - component: {fileID: 113094474375925680}
+  - component: {fileID: 2969770900225404218}
   m_Layer: 0
   m_Name: token_tile_blue
   m_TagString: Untagged
@@ -100,3 +101,16 @@ MonoBehaviour:
   wobblingSpeed: 0.5
   wobblingOffset: 0.1
   rotationSpeed: 5
+--- !u!114 &2969770900225404218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113094474375925685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64966c3cb538d30488dc1456561b5bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}

@@ -24,9 +24,6 @@ public class GenerateGrid : MonoBehaviour
                 SpawnTile(TilePrefab, i, j, GridOffset);
             }
         }
-        List<GameObject> tiles = TilesGrid.Cast<GameObject>().ToList();
-        Debug.Log(tiles.Count);
-        
     }
 
     private void SpawnTile(GameObject tile_prefab, int pos_x, int pos_z, float grid_offset) {

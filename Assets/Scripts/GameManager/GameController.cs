@@ -16,6 +16,14 @@ public class GameController : MonoBehaviour
     private bool IsGameOver(){
         if(tiles.Count == 49){
             Debug.Log("Game ended!");
+            if(data.leftScore > data.rightScore){
+                Debug.Log("Nature wins!");
+                SceneManagement.Instance.LoadNatureWins();
+
+            } else if(data.leftScore < data.rightScore){
+                Debug.Log("Tech wins!");
+                SceneManagement.Instance.LoadTechWins();
+            }
             return true;
         }
         return false;

@@ -14,7 +14,6 @@ public class TileAnimationController : MonoBehaviour
     public float rotationSpeed = 0.5f;
 
     private IEnumerator flipCoroutine = null;
-    private bool tile_reset = false;
 
     private Tiles3DSpawner spawner;
 
@@ -29,12 +28,10 @@ public class TileAnimationController : MonoBehaviour
         WobbleUpAndDown();
     }
 
-    public void Rotate() {
+    public void Rotate(bool isLeft) {
         if (flipCoroutine != null) { StopCoroutine(flipCoroutine); }
-        flipCoroutine = DoTheRotate(tile_reset);
+        flipCoroutine = DoTheRotate(isLeft);
         StartCoroutine(flipCoroutine);
-        
-        tile_reset = !tile_reset;
     }
 
     private void WobbleUpAndDown() {
@@ -50,9 +47,9 @@ public class TileAnimationController : MonoBehaviour
         return Mathf.Sin((x + y + Time.time) * wobblingSpeed) * amplitude;
     }
 
-    public IEnumerator DoTheRotate(bool reset) {
+    public IEnumerator DoTheRotate(bool isLeft) {
         Quaternion qEnd;
-        if (reset) { qEnd = Quaternion.identity; }
+        if (isLeft) { qEnd = Quaternion.identity; }
         else
         {
             qEnd = Quaternion.AngleAxis(180f, -Vector3.Normalize(Vector3.right + -Vector3.forward));
@@ -61,13 +58,13 @@ public class TileAnimationController : MonoBehaviour
         while (quaternionDelta > 0.01f)
         {
             Vector3 axisToRotateAround = Vector3.Normalize(Vector3.right + -Vector3.forward);
-            if(!reset) axisToRotateAround = -axisToRotateAround;
+            if(!isLeft) axisToRotateAround = -axisToRotateAround;
 
             transform.RotateAround(transform.position, axisToRotateAround, rotationSpeed);
             quaternionDelta = Quaternion.Angle(qEnd, transform.rotation);
             yield return null;
         }
         transform.rotation = qEnd;
-        spawner.SpawnModel();
+        spawner.SpawnModel(isLeft);
     }
 }

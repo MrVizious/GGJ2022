@@ -6,7 +6,7 @@ public class DisappearingAnimation : MonoBehaviour
 {
     public AnimationCurve curve = new AnimationCurve();
 
-    public float rotationSpeed = 12f;
+    public float rotationSpeed = 200f;
 
     public void Disappear(){
         StartCoroutine(DisappearAnimation());

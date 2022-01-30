@@ -186,6 +186,8 @@ GameObject:
   - component: {fileID: 8131577619364417022}
   - component: {fileID: 7503472088268128967}
   - component: {fileID: 4369404952750581629}
+  - component: {fileID: 8845232896859587605}
+  - component: {fileID: 6409118029003154130}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Tile
@@ -314,26 +316,65 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.62738657
-      value: 1.0279353
-      inSlope: 1.8927045
-      outSlope: 1.8927045
+      time: 0.31705147
+      value: 0.9272065
+      inSlope: 5.8457747
+      outSlope: 5.8457747
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0381322
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5665022
+      value: 0.86504287
+      inSlope: -2.1345606
+      outSlope: -2.1345606
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.4775128
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
+      time: 0.6206706
+      value: 1.0000024
+      inSlope: 4.827211
+      outSlope: 4.827211
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.39817232
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8845232896859587605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338239954082101851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac4817cafb4d805ba18351d12a616e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeft: 0
+  value: 1
+  numberTexts: []
+--- !u!114 &6409118029003154130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338239954082101851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a076186db19fb1447adad55bba69cce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logic: {fileID: 0}
+  poolTech: {fileID: 11400000, guid: 0e86975174f3df0c5a605e0ac96b7abd, type: 2}
+  poolNature: {fileID: 11400000, guid: 0e86975174f3df0c5a605e0ac96b7abd, type: 2}
 --- !u!1 &3105421109747301278
 GameObject:
   m_ObjectHideFlags: 0

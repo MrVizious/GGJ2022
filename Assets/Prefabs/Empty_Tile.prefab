@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7503472088268128967}
   - component: {fileID: 3112440918522445406}
   - component: {fileID: -5952210638961085398}
+  - component: {fileID: -4471382777441481077}
   m_Layer: 0
   m_Name: Empty_Tile
   m_TagString: Tile
@@ -153,7 +154,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  rotationSpeed: 12
+  rotationSpeed: 300
 --- !u!114 &-5952210638961085398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +218,18 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4471382777441481077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338239954082101851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae753b5664042ba5b101f4d3dbe7fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3105421109747301278
 GameObject:
   m_ObjectHideFlags: 0

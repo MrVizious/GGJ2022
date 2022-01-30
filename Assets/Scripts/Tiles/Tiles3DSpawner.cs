@@ -7,22 +7,23 @@ using UnityEditor;
 
 public class Tiles3DSpawner : MonoBehaviour
 {
-    private TileLogicController logic;
-    public Pool3DModels pool;
+    public TileLogicController logic;
+    public Pool3DModels poolTech, poolNature;
     private GameObject model;
 
     private void Start() {
         logic = GetComponent<TileLogicController>();
     }
 
-    public void SpawnModel() {
+    public void SpawnModel(bool isLeft) {
         if(model != null){
             Destroy(model);
         }
         
+        Pool3DModels pool = isLeft ? poolTech : poolNature;
         model = Instantiate(pool.GetRandomModel(), transform.position, transform.rotation, transform);
         model.AddComponent<AppearingAnimation>();
-        if(!logic.isLeft){
+        if(!isLeft){
             model.transform.RotateAround(transform.position, Vector3.right - Vector3.forward, 180f);
         }
     }
@@ -40,7 +41,7 @@ public class Tiles3DSpawnerEditor : Editor
 
         if (GUILayout.Button("Spawn Tile"))
         {
-            tiles3DSpawner.SpawnModel();
+            tiles3DSpawner.SpawnModel(tiles3DSpawner.logic.isLeft);
         }
     }
 }

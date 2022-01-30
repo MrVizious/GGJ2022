@@ -41,11 +41,13 @@ public class GameData : ScriptableObject
     public void SetLeftScore(int newScore) {
         leftScore = newScore;
         onScoreChangedEvent?.Raise();
+        Debug.Log("Left: " + leftScore);
     }
 
     public void SetRightScore(int newScore) {
         rightScore = newScore;
         onScoreChangedEvent?.Raise();
+        Debug.Log("Right: " + rightScore);
     }
 
     public void ChangeTurn() {

@@ -27,7 +27,7 @@ public class HoverToken : MonoBehaviour
         }
         else
         {
-            go.SetActive(false);
+            //go.SetActive(false);
         }
 
 

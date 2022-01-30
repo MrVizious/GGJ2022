@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4284019088014957454}
   - component: {fileID: 8131577619364417022}
   - component: {fileID: 7503472088268128967}
+  - component: {fileID: 3112440918522445406}
   m_Layer: 0
   m_Name: Empty_Tile
   m_TagString: Tile
@@ -115,6 +116,18 @@ MonoBehaviour:
   wobblingSpeed: 0.5
   wobblingOffset: 0
   rotationSpeed: 5
+--- !u!114 &3112440918522445406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338239954082101851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4dfab6868a6b37f84434ca82f12d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3105421109747301278
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,9 +294,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0.0017710328}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2374478863095445561}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0

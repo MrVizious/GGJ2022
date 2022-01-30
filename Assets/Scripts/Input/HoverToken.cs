@@ -15,7 +15,8 @@ public class HoverToken : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitData, 1000))
         {
-            if(hitData.transform.tag == "Tile") {
+            if(hitData.transform.tag == "Tile"
+                || hitData.transform.tag == "EmptyTile") {
                 go.SetActive(true);
                 worldPosition = hitData.point;
                 Vector3 newPosition = new Vector3(hitData.transform.position.x,

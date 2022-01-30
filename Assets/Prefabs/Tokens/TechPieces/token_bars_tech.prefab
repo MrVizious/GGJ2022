@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5021657102875522202}
   - component: {fileID: 3919673007537749116}
+  - component: {fileID: 2531611787350369340}
   m_Layer: 0
   m_Name: token_bars_tech
   m_TagString: Untagged
@@ -48,6 +49,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdd09c73d2c1914b82fec3b687ed3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2531611787350369340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439483954410555640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad970bf5dffc1357da6533e7e137ae06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1faf025567f45aa64ac6f8637ff7fc78, type: 2}
+  mainToken: {fileID: 7666224542633935554}
 --- !u!1001 &1753300665085961698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -234,6 +249,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 113094474375925681, guid: 3e820f43c6b0f5d4c8f0adbc4d6b71fd, type: 3}
   m_PrefabInstance: {fileID: 4851881465780760568}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7666224542633935554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2969770900225404218, guid: 3e820f43c6b0f5d4c8f0adbc4d6b71fd, type: 3}
+  m_PrefabInstance: {fileID: 4851881465780760568}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64966c3cb538d30488dc1456561b5bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6574080484854248814
 PrefabInstance:
   m_ObjectHideFlags: 0

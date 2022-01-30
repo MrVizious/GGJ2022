@@ -8,24 +8,33 @@ public class TokenLogicManager : MonoBehaviour
 {
     private GameObject HitObject;
     private RaycastHit hit;
-    public GameData data;
 
     // Update is called once per frame
-    void Update()
+    public void Click(bool isLeftTurn)
     {
         //UnityEngine.Debug.Log("updating");
-        UnityEngine.Debug.DrawRay(transform.position,Vector3.up,Color.blue);
         if (Physics.Raycast(new Ray(transform.position-Vector3.up*5,Vector3.up), out hit, 10.0f))
         {
-            if(Input.GetMouseButtonDown(0)){
-                //UnityEngine.Debug.Log("Hit something");
-                HitObject = hit.transform.gameObject;
-                //UnityEngine.Debug.Log(HitObject);
-                //UnityEngine.Debug.Log(HitObject.GetComponent<EmptyTileLogicController>());
-                HitObject.GetComponent<EmptyTileLogicController>().Disappear(data.isLeftTurn);
-                //UnityEngine.Debug.Log(HitObject.GetComponentInChildren<TextMeshPro>().text);
+            HitObject = hit.transform.gameObject;
+            if(hit.transform.tag == "EmptyTile"){
+                HitObject.GetComponent<EmptyTileLogicController>().Disappear(isLeftTurn);
+            }else if(hit.transform.tag == "Tile"){
+                HitObject.GetComponent<TileLogicController>().SetIsLeft(isLeftTurn);
+            }
+        } 
+    }
+
+    public bool isOverEmptyTile()
+    {
+        if (Physics.Raycast(new Ray(transform.position-Vector3.up*5,Vector3.up), out hit, 10.0f))
+        {
+            if (hit.transform.tag == "EmptyTile")
+            {
+                return true;
             }
         }
+        return false;
     }
+
 }
 

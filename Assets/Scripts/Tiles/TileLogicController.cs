@@ -35,6 +35,13 @@ public class TileLogicController : MonoBehaviour
         }
     }
 
+    public void SetIsLeft(bool newValue) {
+        if (newValue != isLeft)
+        {
+            Rotate();
+        }
+    }
+
     public void Rotate() {
         isLeft = !isLeft;
         animator.Rotate(isLeft);

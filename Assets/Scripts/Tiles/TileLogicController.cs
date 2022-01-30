@@ -23,9 +23,7 @@ public class TileLogicController : MonoBehaviour
     }
 
     public void SetValue(int newValue) {
-        //Debug.Log("Old value was " + value + " and new value is " + newValue);
         value = newValue;
-        Debug.Log("New value is " + value);
         UpdateValueTexts();
     }
 

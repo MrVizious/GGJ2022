@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     public GameObject tilePrefab;
     private List<GameObject> tiles = new List<GameObject>();
 
+    private void Update() {
+        CalculateScores();
+    }
     public void AddValueToLeftScore(int newScore) {
         data.AddValueToLeftScore(newScore);
     }
@@ -27,6 +30,7 @@ public class GameController : MonoBehaviour
 
     public void ChangeTurn() {
         data.ChangeTurn();
+        CalculateScores();
     }
 
     public bool GetIsLeftTurn() {

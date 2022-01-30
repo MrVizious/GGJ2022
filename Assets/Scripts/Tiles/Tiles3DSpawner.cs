@@ -23,7 +23,6 @@ public class Tiles3DSpawner : MonoBehaviour
         model = Instantiate(pool.GetRandomModel(), transform.position, transform.rotation, transform);
         model.AddComponent<AppearingAnimation>();
         if(!logic.isLeft){
-            Debug.Log("Upside Down");
             model.transform.RotateAround(transform.position, Vector3.right - Vector3.forward, 180f);
         }
     }

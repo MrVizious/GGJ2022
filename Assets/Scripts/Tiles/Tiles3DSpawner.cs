@@ -7,13 +7,8 @@ using UnityEditor;
 
 public class Tiles3DSpawner : MonoBehaviour
 {
-    public TileLogicController logic;
     public Pool3DModels poolTech, poolNature;
     private GameObject model;
-
-    private void Start() {
-        logic = GetComponent<TileLogicController>();
-    }
 
     public void SpawnModel(bool isLeft) {
         if(model != null){
@@ -41,7 +36,7 @@ public class Tiles3DSpawnerEditor : Editor
 
         if (GUILayout.Button("Spawn Tile"))
         {
-            tiles3DSpawner.SpawnModel(tiles3DSpawner.logic.isLeft);
+            tiles3DSpawner.SpawnModel(tiles3DSpawner.gameObject.GetComponent<TileLogicController>().isLeft);
         }
     }
 }

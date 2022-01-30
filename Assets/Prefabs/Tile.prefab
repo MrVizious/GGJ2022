@@ -358,8 +358,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLeft: 0
-  value: 1
-  numberTexts: []
+  value: 0
+  numberTexts:
+  - {fileID: 5365855276071184564}
+  - {fileID: 7306110318663690235}
 --- !u!114 &6409118029003154130
 MonoBehaviour:
   m_ObjectHideFlags: 0

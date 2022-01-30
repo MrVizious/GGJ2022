@@ -16,15 +16,16 @@ public class TileLogicController : MonoBehaviour
 
     private void Start() {
         animator = GetComponent<TileAnimationController>();
-        SetValue(1);
     }
 
     public void MultiplyValueBy(int factor) {
         SetValue(value * factor);
     }
 
-    public void SetValue(int value) {
-        this.value = value;
+    public void SetValue(int newValue) {
+        //Debug.Log("Old value was " + value + " and new value is " + newValue);
+        value = newValue;
+        Debug.Log("New value is " + value);
         UpdateValueTexts();
     }
 
@@ -44,6 +45,7 @@ public class TileLogicController : MonoBehaviour
 
     public void Rotate() {
         isLeft = !isLeft;
+        MultiplyValueBy(2);
         animator.Rotate(isLeft);
     }
 }

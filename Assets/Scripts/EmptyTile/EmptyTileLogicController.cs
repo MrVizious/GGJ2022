@@ -20,7 +20,7 @@ public class EmptyTileLogicController : MonoBehaviour
 
     private void OnDestroy() {
         GameController controller = GameObject.Find("GameController").GetComponent<GameController>();
-        controller.EmptyTileDestroyed(transform, isLeftTurn);
+        controller.EmptyTileDestroyed(transform, isLeftTurn, value);
     }
 
     public void SetValue(int newValue) {

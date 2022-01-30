@@ -51,11 +51,12 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void EmptyTileDestroyed(Transform t, bool didLeftPlayerDestroyIt) {
+    public void EmptyTileDestroyed(Transform t, bool didLeftPlayerDestroyIt, int value) {
         Quaternion rotation = didLeftPlayerDestroyIt ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, -90, 180);
         GameObject newTile = Instantiate(tilePrefab, new Vector3(t.position.x, 0f, t.position.z), rotation);
         newTile.transform.localScale = new Vector3(0f, 0f, 0f);
         newTile.GetComponent<TileLogicController>().isLeft = didLeftPlayerDestroyIt;
+        newTile.GetComponent<TileLogicController>().SetValue(value);
         newTile.GetComponent<Tiles3DSpawner>().SpawnModel(didLeftPlayerDestroyIt);
         tiles.Add(newTile);
     }

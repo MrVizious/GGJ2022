@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
-using System.Linq;
 
 
 public class GenerateGrid : MonoBehaviour
@@ -13,10 +13,9 @@ public class GenerateGrid : MonoBehaviour
     public float PerlinScale;
     GameObject[,] TilesGrid;
     float[,] P;
-    void Start()
-    {
-        TilesGrid = new GameObject[GridSize,GridSize];
-        float GridOffset = (float)GridSize/2.0f;
+    void Start() {
+        TilesGrid = new GameObject[GridSize, GridSize];
+        float GridOffset = (float)GridSize / 2.0f;
         GeneratePerlinGrid(GridSize);
         TilesGrid = new GameObject[GridSize, GridSize];
         for (int i = 0; i < GridSize; i++)
@@ -33,6 +32,7 @@ public class GenerateGrid : MonoBehaviour
         Quaternion rot = new Quaternion(0f, 0f, 0f, 0f);
         TilesGrid[pos_x, pos_z] = Instantiate(tile_prefab, pos, rot);
         GameObject newTile = TilesGrid[pos_x, pos_z];
+        TilesGrid[pos_x, pos_z].GetComponent<EmptyTileLogicController>().SetValue((int)Mathf.Ceil(P[pos_x, pos_z] * 10));
         newTile.GetComponentInChildren<TextMeshPro>().text = Mathf.Ceil(P[pos_x, pos_z] * 10).ToString();
         //TilesGrid[pos_x,pos_z] = newTile;
         newTile.GetComponent<Renderer>().material.SetColor("_Color", new Color(1 - P[pos_x, pos_z], 0f, 0f));

@@ -22,6 +22,10 @@ public class EmptyTileLogicController : MonoBehaviour
         GameController controller = GameObject.Find("GameController").GetComponent<GameController>();
         controller.EmptyTileDestroyed(transform, isLeftTurn);
     }
+
+    public void SetValue(int newValue) {
+        value = newValue;
+    }
 }
 
 

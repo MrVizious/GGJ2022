@@ -17,7 +17,8 @@ public class TokenLogicManager : MonoBehaviour
         {
             HitObject = hit.transform.gameObject;
             if(hit.transform.tag == "EmptyTile"){
-                HitObject.GetComponent<EmptyTileLogicController>().Disappear(isLeftTurn);
+                EmptyTileLogicController emptyTile = HitObject.GetComponent<EmptyTileLogicController>();
+                emptyTile.Disappear(isLeftTurn);
             }else if(hit.transform.tag == "Tile"){
                 HitObject.GetComponent<TileLogicController>().SetIsLeft(isLeftTurn);
             }

@@ -19,6 +19,8 @@ public class PoolController : MonoBehaviour
 
     public GameData data;
     public bool isLeftController;
+
+    private int rgn;
     void Start()
     {
         allPieces = new GameObject[9];
@@ -33,13 +35,14 @@ public class PoolController : MonoBehaviour
         allPieces[8] = Piece9;
 
         pulledPieces = new GameObject[3];
-        pulledPieces[0] = allPieces[0];
-        
-        for(int i = 1; i < pulledPieces.Length; i++)
+        for(int i = 0; i < pulledPieces.Length; i++)
         {
-            pulledPieces[i] = allPieces[(int)Mathf.Round(Random.Range(0,pulledPieces.Length-1))];
+            rgn = (int)Mathf.Round(Random.Range(1,allPieces.Length-1));
+            if(data.isLeftTurn == isLeftController){Debug.Log(rgn);}
+            pulledPieces[i] = allPieces[rgn];
 
         }
+        if(data.isLeftTurn == isLeftController){pulledPieces[0] = allPieces[0];}
     }
 
     public void TurnChanged()
@@ -48,9 +51,11 @@ public class PoolController : MonoBehaviour
         if(isMyTurn){
             for(int i = 0; i < pulledPieces.Length; i++)
             {
+                rgn = (int)Mathf.Round(Random.Range(1,allPieces.Length-1));
+                if(data.isLeftTurn == isLeftController){Debug.Log(rgn);}
                 if(i == pulledPieces.Length -1)
                 {
-                    pulledPieces[i] = allPieces[(int)Mathf.Round(Random.Range(0,pulledPieces.Length-1))];
+                    pulledPieces[i] = allPieces[rgn];
                 } else {
                     pulledPieces[i] = pulledPieces [i+1];
                 }

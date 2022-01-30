@@ -12,7 +12,10 @@ public class TileLogicController : MonoBehaviour
     public int value = 1;
     public List<TextMeshPro> numberTexts;
 
+    private TileAnimationController animator;
+
     private void Start() {
+        animator = GetComponent<TileAnimationController>();
         SetValue(1);
     }
 
@@ -30,6 +33,11 @@ public class TileLogicController : MonoBehaviour
         {
             text.text = value.ToString();
         }
+    }
+
+    public void Rotate() {
+        isLeft = !isLeft;
+        animator.Rotate();
     }
 }
 
@@ -50,6 +58,10 @@ public class TileLogicControllerEditor : Editor
         if (GUILayout.Button("Multiply by 2"))
         {
             tileLogicController.MultiplyValueBy(2);
+        }
+        if (GUILayout.Button("Rotate"))
+        {
+            tileLogicController.Rotate();
         }
     }
 }

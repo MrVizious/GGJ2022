@@ -16,8 +16,11 @@ public class TileAnimationController : MonoBehaviour
     private IEnumerator flipCoroutine = null;
     private bool tile_reset = false;
 
+    private Tiles3DSpawner spawner;
+
     private void Start() {
         initialY = transform.position.y;
+        spawner = GetComponent<Tiles3DSpawner>();
     }
 
 
@@ -65,20 +68,6 @@ public class TileAnimationController : MonoBehaviour
             yield return null;
         }
         transform.rotation = qEnd;
+        spawner.SpawnModel();
     }
 }
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(TileAnimationController))]
-public class TileAnimationControllerEditor : Editor
-{
-    public override void OnInspectorGUI() {
-        DrawDefaultInspector();
-        TileAnimationController myScript = (TileAnimationController)target;
-        if (GUILayout.Button("Rotate"))
-        {
-            myScript.Rotate();
-        }
-    }
-}
-#endif

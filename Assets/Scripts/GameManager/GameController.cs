@@ -11,6 +11,14 @@ public class GameController : MonoBehaviour
 
     private void Update() {
         CalculateScores();
+        IsGameOver();
+    }
+    private bool IsGameOver(){
+        if(tiles.Count == 49){
+            Debug.Log("Game ended!");
+            return true;
+        }
+        return false;
     }
     public void AddValueToLeftScore(int newScore) {
         data.AddValueToLeftScore(newScore);

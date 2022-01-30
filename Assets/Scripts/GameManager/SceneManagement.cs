@@ -35,4 +35,11 @@ public class SceneManagement : MonoBehaviour {
     public void LoadTechWins(){
         SceneManager.LoadScene("TechWins");
     }
+
+    public void ExitGame(){
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
 }

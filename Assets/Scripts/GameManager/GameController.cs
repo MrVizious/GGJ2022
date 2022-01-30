@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     public GameObject tilePrefab;
     private List<GameObject> tiles = new List<GameObject>();
 
+    private void Start() {
+        data.SetIsLeftTurn(true);
+    }
     private void Update() {
         CalculateScores();
         IsGameOver();

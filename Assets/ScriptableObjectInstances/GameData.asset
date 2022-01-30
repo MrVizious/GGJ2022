@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftScore: 0
   rightScore: 0
+  isLeftTurn: 0
   onScoreChangedEvent: {fileID: 11400000, guid: 78b759e18699fd04ea84d123f648a7bf, type: 2}
+  onTurnChangedEvent: {fileID: 11400000, guid: 4fb1f894280aaf60aa92fb0681524d21, type: 2}

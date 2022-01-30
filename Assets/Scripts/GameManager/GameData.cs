@@ -55,8 +55,10 @@ public class GameData : ScriptableObject
     }
 
     public void SetIsLeftTurn(bool newValue) {
-        isLeftTurn = newValue;
-        onTurnChangedEvent?.Raise();
+        if(newValue != isLeftTurn) {
+            isLeftTurn = newValue;
+            onTurnChangedEvent?.Raise();
+        }
     }
 }
 

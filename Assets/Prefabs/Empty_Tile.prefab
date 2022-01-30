@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -4471382777441481077}
   m_Layer: 0
   m_Name: Empty_Tile
-  m_TagString: Tile
+  m_TagString: EmptyTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

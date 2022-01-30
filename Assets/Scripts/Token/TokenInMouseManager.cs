@@ -27,6 +27,8 @@ public class TokenInMouseManager : MonoBehaviour
 
         foreach (Transform child in this.gameObject.transform){GameObject.Destroy(child.gameObject);}
 
+        Debug.Log(TokenForDisplayPrefab == null);
+
         TokenForDisplay = Instantiate(TokenForDisplayPrefab) as GameObject;
         TokenForDisplay.transform.position = this.gameObject.transform.position;
         TokenForDisplay.transform.rotation = this.gameObject.transform.rotation;

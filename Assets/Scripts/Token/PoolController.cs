@@ -35,9 +35,9 @@ public class PoolController : MonoBehaviour
         allPieces[8] = Piece9;
 
         pulledPieces = new GameObject[3];
-        for(int i = 1; i < pulledPieces.Length; i++)
+        for(int i = 0; i < pulledPieces.Length; i++)
         {
-            rgn = (int)Mathf.Round(Random.Range(0,allPieces.Length-1));
+            rgn = (int)Mathf.Round(Random.Range(1,allPieces.Length-1));
             if(data.isLeftTurn == isLeftController){Debug.Log(rgn);}
             pulledPieces[i] = allPieces[rgn];
 
@@ -49,9 +49,9 @@ public class PoolController : MonoBehaviour
     {
         bool isMyTurn = data.isLeftTurn == isLeftController;
         if(isMyTurn){
-            for(int i = 1; i < pulledPieces.Length; i++)
+            for(int i = 0; i < pulledPieces.Length; i++)
             {
-                rgn = (int)Mathf.Round(Random.Range(0,allPieces.Length-1));
+                rgn = (int)Mathf.Round(Random.Range(1,allPieces.Length-1));
                 if(data.isLeftTurn == isLeftController){Debug.Log(rgn);}
                 if(i == pulledPieces.Length -1)
                 {

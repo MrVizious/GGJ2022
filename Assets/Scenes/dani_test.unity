@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &30877390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9064892183246946214, guid: a70cf0c46993a394cbfa9969787eb5dd, type: 3}
+  m_PrefabInstance: {fileID: 463751469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &230150636
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +231,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &699372377
+--- !u!1001 &463751469
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -235,11 +240,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6291065727713496250, guid: a70cf0c46993a394cbfa9969787eb5dd, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6291065727713496250, guid: a70cf0c46993a394cbfa9969787eb5dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7937818
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6291065727713496250, guid: a70cf0c46993a394cbfa9969787eb5dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -247,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6291065727713496250, guid: a70cf0c46993a394cbfa9969787eb5dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2495074
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6291065727713496250, guid: a70cf0c46993a394cbfa9969787eb5dd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -375,7 +380,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &926287007
 GameObject:
@@ -406,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed5f752995944d31afa23f9d7d31369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 1329033024}
+  go: {fileID: 30877390}
 --- !u!4 &926287009
 Transform:
   m_ObjectHideFlags: 0
@@ -420,13 +425,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1329033024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9064892183246946214, guid: a70cf0c46993a394cbfa9969787eb5dd, type: 3}
-  m_PrefabInstance: {fileID: 699372377}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1401964992
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +538,7 @@ Transform:
   m_Children:
   - {fileID: 230150637}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761813519
 GameObject:
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 2056923404}
   - component: {fileID: 2056923403}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 1faf025567f45aa64ac6f8637ff7fc78, type: 2}
-  tilePrefab: {fileID: 0}
+  tilePrefab: {fileID: 2338239954082101851, guid: 7b41132514ced063bae983283fefa792, type: 3}
 --- !u!4 &2056923404
 Transform:
   m_ObjectHideFlags: 0
@@ -854,7 +854,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091537349
 GameObject:
@@ -886,7 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GridSize: 7
-  TilePrefab: {fileID: 2338239954082101851, guid: 7b41132514ced063bae983283fefa792, type: 3}
+  TilePrefab: {fileID: 2338239954082101851, guid: 063c769b2e0f51e46986b9a27f649d95, type: 3}
   PerlinRange: 1500
   PerlinScale: 0.35
 --- !u!4 &2091537351
@@ -902,7 +902,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3681715499637410419
 PrefabInstance:
